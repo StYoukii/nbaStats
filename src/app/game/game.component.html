@@ -1,0 +1,31 @@
+<h2>Game</h2>
+
+<!-- TODO: mettre en place la css bootstrap du formulaire: livre "lear Angular p. 203" -->
+
+<div id="game-params">
+  <form>
+    <fieldset>
+      <legend>Teams</legend>
+      <div class="form-group">
+        <label for="road">Road</label>
+        <select [(ngModel)]="home.name" name="road" class="form-control" id="road" required (ngModelChange)="onChangeHome($event)">
+          <option *ngFor="let teamName of teamsNamesList" [value]="teamName">{{teamName}}</option>
+        </select>
+        <h3>VS.</h3>
+        <label for="home">Home</label>
+        <select [(ngModel)]="road.name" name="home" class="form-control" id="home" required (ngModelChange)="onChangeRoad($event)">
+          <option *ngFor="let teamName of teamsNamesList" [value]="teamName">{{teamName}}</option>
+        </select>
+      </div>
+    </fieldset>
+  </form>
+</div>
+
+<div id="game-informations">
+  <h3>{{home.name}} vs {{road.name}}</h3>
+
+</div>
+
+<div id="game-simulation">
+  
+</div>
