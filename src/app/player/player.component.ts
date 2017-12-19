@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var require: any;
+
 const NBA = require('nba');
 
 @Component({

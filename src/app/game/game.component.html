@@ -1,6 +1,6 @@
 <h2>Game</h2>
 
-<!-- TODO: mettre en place la css bootstrap du formulaire: livre "lear Angular p. 203" -->
+<!-- TODO: mettre en place la css bootstrap du formulaire : livre "learn Angular p. 203" -->
 
 <div id="game-params">
   <form>
@@ -8,12 +8,12 @@
       <legend>Teams</legend>
       <div class="form-group">
         <label for="road">Road</label>
-        <select [(ngModel)]="home.name" name="road" class="form-control" id="road" required (ngModelChange)="onChangeHome($event)">
+        <select [(ngModel)]="road.name" name="road" class="form-control" id="road" required (ngModelChange)="onChangeRoad($event)">
           <option *ngFor="let teamName of teamsNamesList" [value]="teamName">{{teamName}}</option>
         </select>
         <h3>VS.</h3>
         <label for="home">Home</label>
-        <select [(ngModel)]="road.name" name="home" class="form-control" id="home" required (ngModelChange)="onChangeRoad($event)">
+        <select [(ngModel)]="home.name" name="home" class="form-control" id="home" required (ngModelChange)="onChangeHome($event)">
           <option *ngFor="let teamName of teamsNamesList" [value]="teamName">{{teamName}}</option>
         </select>
       </div>
@@ -21,11 +21,31 @@
   </form>
 </div>
 
-<div id="game-informations">
-  <h3>{{home.name}} vs {{road.name}}</h3>
+<!-- TODO: mettre en place la css bootstrap pour les tableaux -->
 
+<div id="game-informations">
+  <h3>{{road.name}}</h3>
+  <table>
+    <tr>
+      <th>Player</th>
+      <th>Position</th>
+    </tr>
+    <tr *ngFor="let player of road.roster">
+      <td>{{player.playerId}}</td>
+      <td>{{player.player}}</td>
+      <td>{{player.position}}</td>
+    </tr>
+  </table>
+
+  <h3>{{home.name}}</h3>
+  <table>
+    <tr *ngFor="let player of home.roster">
+      <td>{{player.player}}</td>
+      <td>{{player.position}}</td>
+    </tr>
+  </table>
 </div>
 
 <div id="game-simulation">
-  
+
 </div>
