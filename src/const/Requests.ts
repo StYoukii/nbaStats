@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Globals } from '../const/Globals';
 import { Team } from "../models/Team";
 import { Player } from "../models/Player";
+import {last} from "rxjs/operator/last";
 
 @Injectable()
 export class Requests {
@@ -30,7 +31,7 @@ export class Requests {
   }
 
   /**
-   * Requêter les statistiques des joueurs
+   * Requêtage des statistiques des joueurs
    */
   public static requestPlayerProfile(player: Player) {
     Globals.NBA.stats.playerProfile({
@@ -41,8 +42,11 @@ export class Requests {
       SeasonType: "Regular Season",
     }).then(response => {
       let seasonTotalsRegularSeason = response.seasonTotalsRegularSeason;
+      let lastSeasonTotalsRegularSeason = seasonTotalsRegularSeason[seasonTotalsRegularSeason.length-1];
 
-      // player.addStatsToPlayer("test");
+      // console.log(seasonTotalsRegularSeason[seasonTotalsRegularSeason.length-1]);
+
+      player.addStatsToPlayerStats(lastSeasonTotalsRegularSeason);
     });
   }
 

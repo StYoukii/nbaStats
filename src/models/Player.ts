@@ -1,7 +1,9 @@
+import { PlayerStats } from "./PlayerStats";
+
 export class Player {
 
   age: number;
-  birtDate: string;
+  birthDate: string;
   exp: string;
   height: string;
   leagueID: string;
@@ -14,6 +16,8 @@ export class Player {
   teamID: number;
   weight: string;
 
+  stats: PlayerStats;
+
   constructor() {
 
   }
@@ -22,7 +26,7 @@ export class Player {
    * Parser les données en objets stats
    * @param data
    */
-  public static addStatsToPlayer(data) {
-    console.log(data);
+  public addStatsToPlayerStats(data) {
+    this.stats = data;
   }
 }
