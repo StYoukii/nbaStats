@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Globals } from '../const/Globals';
 import { Team } from "../models/Team";
 import { Player } from "../models/Player";
+import {PlayerStats} from "../models/PlayerStats";
 
 @Injectable()
 export class Requests {
