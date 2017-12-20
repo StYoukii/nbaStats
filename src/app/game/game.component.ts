@@ -3,12 +3,6 @@ import { Team } from '../../models/Team';
 import { Globals } from '../../const/Globals';
 import { Requests } from '../../const/Requests';
 
-declare var require: any;
-
-const NBA = require('nba');
-const LEAGUE_ID = "00"; // NBA
-const SEASON = "2017-18";
-
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -18,21 +12,21 @@ export class GameComponent implements OnInit {
 
   public teamsNamesList = Globals.TEAM_NAME_LIST;
 
-  public home: Team = new Team();
   public road: Team = new Team();
+  public home: Team = new Team();
 
   constructor() {
-
-  }
-
-  ngOnInit() {
     this.home.name = this.teamsNamesList[0];
     this.road.name = this.teamsNamesList[1];
 
-    this.home.id = NBA.teamIdFromName(this.home.name);
-    this.road.id = NBA.teamIdFromName(this.road.name);
+    this.home.id = Globals.NBA.teamIdFromName(this.home.name);
+    this.road.id = Globals.NBA.teamIdFromName(this.road.name);
 
     this.refreshData();
+  }
+
+  ngOnInit() {
+
   }
 
   /**
@@ -41,7 +35,7 @@ export class GameComponent implements OnInit {
    */
   onChangeRoad(teamName) {
     this.road.name = teamName;
-    this.road.id = NBA.teamIdFromName(this.road.name);
+    this.road.id = Globals.NBA.teamIdFromName(this.road.name);
 
     this.refreshData();
   }
@@ -52,7 +46,7 @@ export class GameComponent implements OnInit {
    */
   onChangeHome(teamName) {
     this.home.name = teamName;
-    this.home.id = NBA.teamIdFromName(this.home.name);
+    this.home.id = Globals.NBA.teamIdFromName(this.home.name);
 
     this.refreshData();
   }

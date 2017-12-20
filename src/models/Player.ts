@@ -19,7 +19,7 @@ export class Player {
   stats: PlayerStats;
 
   constructor() {
-
+    this.stats = new PlayerStats();
   }
 
   /**

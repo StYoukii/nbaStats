@@ -1,5 +1,6 @@
 export class PlayerStats {
-  ast: number;
+
+  ast: number = 0;
   blk: number;
   dreb: number;
   fG3A: number;

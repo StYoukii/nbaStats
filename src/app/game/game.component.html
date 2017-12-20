@@ -24,13 +24,13 @@
 <!-- TODO: mettre en place la css bootstrap pour les tableaux -->
 
 <div id="game-informations">
-  <h3>{{road.name}}</h3>
+  <h3>Road: {{road.name}}</h3>
   <table>
     <tr>
       <th>Player</th>
       <th>Position</th>
     </tr>
-    <tr *ngFor="let player of road.roster">
+    <tr *ngFor="let player of road.commonTeamRoster">
       <td>{{player.playerId}}</td>
       <td>{{player.player}}</td>
       <td>{{player.position}}</td>
@@ -38,9 +38,9 @@
     </tr>
   </table>
 
-  <h3>{{home.name}}</h3>
+  <h3>Home: {{home.name}}</h3>
   <table>
-    <tr *ngFor="let player of home.roster">
+    <tr *ngFor="let player of home.commonTeamRoster">
       <td>{{player.player}}</td>
       <td>{{player.position}}</td>
     </tr>

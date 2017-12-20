@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { Globals } from '../const/Globals';
 import { Team } from "../models/Team";
 import { Player } from "../models/Player";
-import {last} from "rxjs/operator/last";
 
 @Injectable()
 export class Requests {
@@ -22,10 +21,10 @@ export class Requests {
     }).then(response => {
       let commonTeamRoster = response.commonTeamRoster;
 
-      team.addPlayersToTeam(commonTeamRoster);
+      team.commonTeamRoster = commonTeamRoster;
 
-      for(let i = 0; i < team.roster.length; i++) {
-        Requests.requestPlayerProfile(team.roster[i]);
+      for(let i = 0; i < team.commonTeamRoster.length; i++) {
+        Requests.requestPlayerProfile(team.commonTeamRoster[i]);
       }
     });
   }
@@ -44,11 +43,7 @@ export class Requests {
       let seasonTotalsRegularSeason = response.seasonTotalsRegularSeason;
       let lastSeasonTotalsRegularSeason = seasonTotalsRegularSeason[seasonTotalsRegularSeason.length-1];
 
-      // console.log(seasonTotalsRegularSeason[seasonTotalsRegularSeason.length-1]);
-
-      player.addStatsToPlayerStats(lastSeasonTotalsRegularSeason);
+      player.stats = lastSeasonTotalsRegularSeason;
     });
   }
-
-
 }
