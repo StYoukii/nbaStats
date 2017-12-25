@@ -23,7 +23,7 @@ export class Globals {
     'Golden State Warriors',
     'Houston Rockets',
     'Indiana Pacers',
-    'LA Clippers',
+    'Los Angeles Clippers',
     'Los Angeles Lakers',
     'Memphis Grizzlies',
     'Miami Heat',
@@ -42,6 +42,10 @@ export class Globals {
     'Utah Jazz',
     'Washington Wizards'
   ];
+
+  public static CENTER: string = "C";
+  public static FORWARD: string = "F";
+  public static GUARD: string = "G";
 }
 
 

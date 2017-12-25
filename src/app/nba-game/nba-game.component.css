@@ -1,0 +1,56 @@
+#game-params h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #236300;
+}
+
+#game-informations {
+
+}
+
+#game-informations h3 {
+  text-align: center;
+  font-weight: bold;
+  color: #236300;
+}
+
+#game-informations table {
+  border-collapse: collapse;
+}
+
+#game-informations table thead {
+
+}
+
+#game-informations table thead tr {
+
+}
+
+#game-informations table thead tr th {
+  padding: 5px;
+  background-color: #236300;
+  color: #ffffff;
+}
+
+#game-informations table tbody {
+
+}
+
+#game-informations table tbody tr:nth-child(even) {
+  background-color: #cbcbcb;
+}
+
+#game-informations table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+#game-informations table tbody tr.title {
+  background-color: rgba(5, 115, 0, 0.44);
+  font-weight: bold;
+}
+
+
+
+#game-informations table tbody tr td {
+  padding: 5px;
+}

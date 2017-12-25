@@ -1,5 +1,18 @@
 <h2>Informations</h2>
 
 <ul>
-  <li>Dans son 5 de départ une équipe doit disposer de deux arrières (G pour Guard, regroupant les postes 1 et 2), 2 ailiers (F pour Forward, regroupant les postes 3 et 4) et 1 pivot (C pour Center, le poste 5)</li>
+  <li>Starter : dans son 5 de départ une équipe doit disposer de deux arrières (G pour Guard, regroupant les postes 1 et 2), 2 ailiers (F pour Forward, regroupant les postes 3 et 4) et 1 pivot (C pour Center, le poste 5)</li>
+  <li>Bench : la sous-partie « Bench » décrit les performances des joueurs sortis du banc.</li>
 </ul>
+
+<h2>TODO</h2>
+
+<p>Calculer le nombre de possession en fonction du roster et du bench en prenant soin de ne pas compter les joueurs absents</p>
+<p>Possibiliter de déplacer les joueurs direcetement dans le tableau suiavnt s'ils sont roster, bench ou absent</p>
+<p>Créer un 5 par défaut en fonction des ID des joueurs -> Essayer de récupérer l'équipe par défaut grâce à une API</p>
+
+<h3>Analyse statistique</h3>
+
+<h4>La notion de possession</h4>
+
+<p>Calcul de la possession en fonction de la boxscore : poss = nbtir + 0.44 * nblf - reboff + pdb</p>

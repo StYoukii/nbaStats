@@ -1,4 +1,4 @@
-export class PlayerStats {
+export class NBAPlayerStats {
 
   ast: number = 0;
   blk: number;

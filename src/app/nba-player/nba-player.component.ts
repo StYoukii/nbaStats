@@ -5,11 +5,11 @@ declare var require: any;
 const NBA = require('nba');
 
 @Component({
-  selector: 'app-player',
-  templateUrl: './player.component.html',
-  styleUrls: ['./player.component.css']
+  selector: 'app-nba-player',
+  templateUrl: './nba-player.component.html',
+  styleUrls: ['./nba-player.component.css']
 })
-export class PlayerComponent implements OnInit {
+export class NbaPlayerComponent implements OnInit {
 
   player = null;
 
